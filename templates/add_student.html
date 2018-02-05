@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1">
+            <h3>添加学员</h3>
+            <form method="POST" action="/add_student/" class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">学员姓名</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name" placeholder="请输入学员名称" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">学员年龄</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="name" placeholder="请输入学员年龄" name="age">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-3 control-label">学员班级</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" name="class_id">
+                            {% for item in class_list %}
+                                <option value="{{ item.id }}">{{ item.title }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                </div>
+
+
+                <input type="submit" value="提交" class="btn btn-primary pull-right" id="subBtn">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

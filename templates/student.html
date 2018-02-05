@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/bootstrap.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <style>
+        .class_table {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="container class_table">
+    <div class="row" id="form_data">
+        <div class="col-md-7 col-md-offset-2">
+            <h3>学生列表</h3>
+            <a href="/add_student/">增加</a>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>班级</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in student_list %}
+                    <tr>
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.name }}</td>
+                        <td>{{ row.age }}</td>
+                        <td>{{ row.cls.title }}</td>
+                        <td>
+                            <a href="/edit_student/?id={{ row.id }}">编辑</a>
+                            <a href="/del_student/?id={{ row.id }}">删除</a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
