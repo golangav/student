@@ -3,6 +3,16 @@ from app01 import models
 
 
 
+def index(request):
+
+    # result = models.Teacher.objects.all()
+    # for row in result:
+    #     print(row.t2c.all())
+
+    return HttpResponse("....")
+
+
+
 
 
 

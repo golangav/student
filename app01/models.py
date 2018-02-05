@@ -10,9 +10,16 @@ class Classes(models.Model):
     title = models.CharField(max_length=32)
 
 
+
+class Teacher(models.Model):
+    name = models.CharField(max_length=32)
+    t2c = models.ManyToManyField("Classes")
+
+
 class Student(models.Model):
     name = models.CharField(max_length=32)
     age = models.CharField(max_length=32)
     cls = models.ForeignKey(to="Classes",to_field="id")
+
 
 
